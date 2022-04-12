@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:x_book_app/models/user.dart';
 import 'package:x_book_app/screens/Splashscreen/splashscreen.dart';
-import 'package:x_book_app/screens/home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:x_book_app/services/auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,19 +14,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<CustomUser?>(
-      stream: AuthService().user,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return const MaterialApp(
-            home: Home(),
-          );
-        } else {
-          return const MaterialApp(
-          home: SplashScreen(),
-          );
-        }
-      },
+    return MaterialApp(
+      home: const SplashScreen(),
     );
   }
 }

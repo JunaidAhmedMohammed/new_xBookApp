@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../authentication/authenticate.dart';
+import '../authentication/navigate.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
     _bookController.addListener(() {
       if (_bookController.value > 0.7) {
         _bookController.stop();
-       bookAnimated = true;
+        bookAnimated = true;
         setState(() {});
         Future.delayed(const Duration(seconds: 1), () {
           animatebooktext = true;
@@ -54,13 +54,13 @@ class _SplashScreenState extends State<SplashScreen>
               color: Colors.white,
               borderRadius: BorderRadius.circular(bookAnimated ? 30.0 : 0.0),
             ),
-           child: Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                 Visibility(
-                    visible: !bookAnimated,
-                    child: Lottie.asset(
+                Visibility(
+                  visible: !bookAnimated,
+                  child: Lottie.asset(
                     'assets/splashlogo.json',
                     controller: _bookController,
                     onLoaded: (composition) {
@@ -70,7 +70,6 @@ class _SplashScreenState extends State<SplashScreen>
                     },
                   ),
                 ),
-
                 Visibility(
                   visible: bookAnimated,
                   child: Lottie.asset(
@@ -92,7 +91,6 @@ class _SplashScreenState extends State<SplashScreen>
               ],
             ),
           ),
-
 
           // Text bottom part
           Visibility(visible: bookAnimated, child: const _BottomPart()),
@@ -118,7 +116,7 @@ class _BottomPart extends StatelessWidget {
               'Buy or Sell',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'BeauRivage',
+                  fontFamily: 'BeauRivage',
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
@@ -149,9 +147,10 @@ class _BottomPart extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(Icons.chevron_right),
                   iconSize: 50.0,
-                  color: Colors.black, onPressed: () {
+                  color: Colors.black,
+                  onPressed: () {
                     _navigateToAuthenticate(context);
-                },
+                  },
                 ),
               ),
             ),
@@ -161,7 +160,9 @@ class _BottomPart extends StatelessWidget {
       ),
     );
   }
+
   void _navigateToAuthenticate(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Authenticate()));
-    }
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const MyApp2()));
+  }
 }
