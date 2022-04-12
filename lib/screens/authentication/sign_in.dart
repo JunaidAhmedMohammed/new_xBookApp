@@ -1,12 +1,9 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-
+import 'package:x_book_app/screens/buyerScreen/Listview_viewallbooks.dart';
 import 'package:x_book_app/services/auth.dart';
 import 'package:x_book_app/shared/constants.dart';
-
-import '../buyerScreen/ViewAllBook.dart';
-
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -52,7 +49,6 @@ class _SignInState extends State<SignIn> {
               TextFormField(
                 validator: (val) => val!.isEmpty ? 'Enter an email' : null,
                 decoration: textInputDecoration.copyWith(hintText: 'email'),
-
                 onChanged: (val) {
                   setState(() => email = val);
                 },
@@ -90,12 +86,17 @@ class _SignInState extends State<SignIn> {
                 style: const TextStyle(color: Colors.red, fontSize: 14.0),
               ),
               const SizedBox(height: 12.0),
-              const Text("Looking to buy books? You don't need an account", textAlign: TextAlign.center,  style: TextStyle(fontSize: 20),),
-              ElevatedButton(onPressed: () {
-                _navigateToViewAllBookScreen(context);
-                // Navigate to List of Books being sold screen
-              }, child: const Text('View all Books being sold'))
-
+              const Text(
+                "Looking to buy books? You don't need an account",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    _navigateToListview_viewallbooksScreen(context);
+                    // Navigate to List of Books being sold screen
+                  },
+                  child: const Text('View all Books being sold'))
             ],
           ),
         ),
@@ -103,6 +104,8 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
-void _navigateToViewAllBookScreen(context){
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CloudFirestoreSearch()));
+
+void _navigateToListview_viewallbooksScreen(context) {
+  Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => CloudFirestoreSearch2()));
 }
