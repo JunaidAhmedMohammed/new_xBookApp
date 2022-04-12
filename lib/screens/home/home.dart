@@ -1,18 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:x_book_app/models/user.dart';
 import 'package:x_book_app/screens/sell_book/SellBook.dart';
 import 'package:x_book_app/services/auth.dart';
-import 'package:provider/provider.dart';
-
-import '../view_seller_books/ViewSellerBooks.dart';
-
+import '../ViewSellerBooks/viewsellerbooks.dart';
 
 class Home extends StatelessWidget {
-
-  const Home({ Key? key }) : super(key: key);
-    
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +37,15 @@ class Home extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20.0),
-              child: Text(user!.email!, style: const TextStyle(fontSize: 20),)
-          ),
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                user!.email!,
+                style: const TextStyle(fontSize: 20),
+              )),
           Container(
-
             color: Colors.red,
-            child: SizedBox(height: 50,
+            child: SizedBox(
+              height: 50,
               child: TextButton(
                 style: TextButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 20),
@@ -64,9 +59,9 @@ class Home extends StatelessWidget {
             ),
           ),
           Container(
-
             color: Colors.red,
-            child: SizedBox(height: 50,
+            child: SizedBox(
+              height: 50,
               child: TextButton(
                 style: TextButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 20),
@@ -83,10 +78,14 @@ class Home extends StatelessWidget {
       ),
     );
   }
+
   void _navigateToSellBookScreen(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SellBook()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SellBook()));
   }
-  void _navigateToViewSellerBookScreen(context){
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ViewSellerBooks()));
-}
+
+  void _navigateToViewSellerBookScreen(context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const ViewSellerBooks()));
+  }
 }
