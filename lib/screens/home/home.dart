@@ -17,11 +17,20 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text('You are Logged In'),
+        title: const Text(
+          'You are Logged In',
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
         actions: <Widget>[
           TextButton.icon(
-            icon: const Icon(Icons.person),
-            label: const Text('logout'),
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            label: const Text(
+              'logout',
+              style: TextStyle(color: Colors.white),
+            ),
             onPressed: () async {
               await _auth.signOut();
             },
@@ -37,13 +46,14 @@ class Home extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Container(
-              padding: EdgeInsets.all(20.0),
-              child: Text(
+              padding: const EdgeInsets.all(20.0),
+              child: Text("Your registered email is " + 
                 user!.email!,
-                style: const TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 20, fontFamily: "ProductSans"),
               )),
           Container(
-            color: Colors.red,
+            color: Colors.indigo,
             child: SizedBox(
               height: 50,
               child: TextButton(
@@ -54,12 +64,13 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   _navigateToSellBookScreen(context);
                 },
-                child: const Text('Click to sell your books'),
+                child: const Text('Add a Book to sell', style: TextStyle(color: Colors.white,fontFamily: "ProductSans"),),
               ),
             ),
           ),
+          const SizedBox(height: 20,),
           Container(
-            color: Colors.red,
+            color: Colors.indigo,
             child: SizedBox(
               height: 50,
               child: TextButton(
@@ -70,7 +81,7 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   _navigateToViewSellerBookScreen(context);
                 },
-                child: const Text('Click to view your books'),
+                child: const Text('View All the Books you are selling', style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),),
               ),
             ),
           )

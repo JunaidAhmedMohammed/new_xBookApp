@@ -29,11 +29,20 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
         backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text('Register for XBookApp'),
+        title: const Text(
+          'Register for XBookApp',
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
         actions: <Widget>[
           TextButton.icon(
-            icon: const Icon(Icons.person),
-            label: const Text('Sign In'),
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            label: const Text(
+              'Sign In',
+              style: TextStyle(fontFamily: "ProductSans", color: Colors.white),
+            ),
             onPressed: () => widget.toggleView(),
           ),
         ],
@@ -46,7 +55,7 @@ class _RegisterState extends State<Register> {
             children: <Widget>[
               const SizedBox(height: 20.0),
               TextFormField(
-                decoration: textInputDecoration.copyWith(hintText: 'email'),
+                decoration: textInputDecoration.copyWith(hintText: 'Email'),
                 validator: (val) => val!.isEmpty ? 'Enter an email' : null,
                 onChanged: (val) {
                   setState(() => email = val);
@@ -55,7 +64,7 @@ class _RegisterState extends State<Register> {
               const SizedBox(height: 20.0),
               TextFormField(
                 obscureText: true,
-                 decoration: textInputDecoration.copyWith(hintText: 'password'),
+                decoration: textInputDecoration.copyWith(hintText: 'Password'),
                 validator: (val) =>
                     val!.length < 6 ? 'Enter a password 6+ chars long' : null,
                 onChanged: (val) {
@@ -64,9 +73,13 @@ class _RegisterState extends State<Register> {
               ),
               const SizedBox(height: 20.0),
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo, // Background color
+                  ),
                   child: const Text(
                     'Register',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white, fontFamily: "ProductSans"),
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
