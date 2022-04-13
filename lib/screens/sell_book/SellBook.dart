@@ -341,12 +341,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
                             gravity: ToastGravity.BOTTOM, // location
                           ));
 
-                  // show toast
-                  Fluttertoast.showToast(
-                    msg: "Book title cannot be empty", // message
-                    toastLength: Toast.LENGTH_SHORT, // length
-                    gravity: ToastGravity.BOTTOM, // location
-                  );
+                  // // show toast
+                  // Fluttertoast.showToast(
+                  //   msg: "Book title cannot be empty", // message
+                  //   toastLength: Toast.LENGTH_SHORT, // length
+                  //   gravity: ToastGravity.BOTTOM, // location
+                  // );
 
                   _navigateToHomeScreen(context);
                 }
