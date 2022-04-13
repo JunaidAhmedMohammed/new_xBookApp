@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+
 
 import '../../models/BookModel.dart';
 
 class BookDetails extends StatefulWidget {
   final Books books;
 
-  BookDetails({required this.books});
+  const BookDetails({required this.books});
 
   @override
   _BookDetailsState createState() => _BookDetailsState();
@@ -19,30 +17,33 @@ class _BookDetailsState extends State<BookDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Book Details"),
+         backgroundColor: Colors.indigo[400],
+        elevation: 0.0,
+        title: const Text("Book Details", style: TextStyle(fontFamily: "ProductSans"),),
         centerTitle: true,
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
-            "${widget.books.title}",
+            widget.books.title,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, fontFamily: "ProductSans"),
           ),
           Text(
-            "${widget.books.author}",
+            widget.books.author,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, fontFamily: "ProductSans"),
           ),
           Text(
-            "${widget.books.edition}",
+            widget.books.edition,
             textAlign: TextAlign.center,
-            style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, fontFamily: "ProductSans"),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
         ],

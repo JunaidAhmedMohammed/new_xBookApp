@@ -18,7 +18,10 @@ class SellBook extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text(appTitle, style: TextStyle(fontFamily: "ProductSans"),),
+        title: const Text(
+          appTitle,
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
       ),
       body: MyCustomForm(),
     );
@@ -164,7 +167,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   // otherwise, show instruction of using STT
                   : _lastWords.isNotEmpty
                       ? 'Last recognized words: $_lastWords'
-                      : 'Instruction: Tap the microphone to start \nlistening & paste in any Text Field', style: const TextStyle(fontFamily: "ProductSans"),
+                      : 'Instruction: Tap the microphone to start \nlistening & paste in any Text Field',
+              style: const TextStyle(fontFamily: "ProductSans"),
             ),
           ),
           Ink(
@@ -196,7 +200,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
           //   tooltip: 'Listen',
           // ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: myController_title,
               onChanged: (value) {
@@ -205,10 +209,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 setState(() {});
               },
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: 'Book Title',
+                hintStyle: const TextStyle(fontFamily: "ProductSans"),
                 suffixIcon: IconButton(
-                    icon: Icon(Icons.paste),
+                    icon: const Icon(Icons.paste),
                     onPressed: () {
                       String value = _lastWords.toString();
                       myController_title.text = value;
@@ -218,17 +223,18 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: myController_author,
               onChanged: (value) {
                 author = value;
               },
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
+                hintStyle: const TextStyle(fontFamily: "ProductSans"),
                 hintText: 'Author name',
                 suffixIcon: IconButton(
-                    icon: Icon(Icons.paste),
+                    icon: const Icon(Icons.paste),
                     onPressed: () {
                       String value = _lastWords.toString();
                       myController_author.text = value;
@@ -238,17 +244,18 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: myController_edition,
               onChanged: (value) {
                 edition = value;
               },
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: 'Edition',
+                hintStyle: const TextStyle(fontFamily: "ProductSans"),
                 suffixIcon: IconButton(
-                    icon: Icon(Icons.paste),
+                    icon: const Icon(Icons.paste),
                     onPressed: () {
                       String value = _lastWords.toString();
                       myController_edition.text = value;
@@ -258,17 +265,18 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: myController_price,
               onChanged: (value) {
                 price = double.parse(value);
               },
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: 'Price',
+                hintStyle: const TextStyle(fontFamily: "ProductSans"),
                 suffixIcon: IconButton(
-                    icon: Icon(Icons.paste),
+                    icon: const Icon(Icons.paste),
                     onPressed: () {
                       String value = _lastWords.toString();
                       myController_price.text = value;
@@ -278,17 +286,18 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: TextField(
               controller: myController_contact,
               onChanged: (value) {
                 contact = value;
               },
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
                 hintText: 'Contact Info',
+                hintStyle: const TextStyle(fontFamily: "ProductSans"),
                 suffixIcon: IconButton(
-                    icon: Icon(Icons.paste),
+                    icon: const Icon(Icons.paste),
                     onPressed: () {
                       String value = _lastWords.toString();
                       myController_contact.text = value;
@@ -300,10 +309,13 @@ class _MyCustomFormState extends State<MyCustomForm> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
             child: ElevatedButton(
-               style: ElevatedButton.styleFrom(
-                    primary: Colors.indigo, // Background color
-                  ),
-              child: const Text('Submit'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.indigo, // Background color
+              ),
+              child: const Text(
+                'Submit',
+                style: TextStyle(fontFamily: "ProductSans"),
+              ),
               onPressed: () async {
                 // validate data and upload information if firestore database
                 if (validate_data()) {
@@ -348,6 +360,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   }
 
   void _navigateToHomeScreen(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Home()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const Home()));
   }
 }
