@@ -19,11 +19,13 @@ class _CloudFirestoreSearchState extends State<CloudFirestoreSearch> {
   {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo[400],
+        elevation: 0.0,
         title: Card(
           child: TextField(
             // ignore: prefer_const_constructors
             decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search), hintText: 'Search.. '),
+                prefixIcon: const Icon(Icons.search), hintText: 'Search.. ', hintStyle: const TextStyle(fontFamily: "ProductSans")),
             onChanged: (val) {
               setState(() {
                 title = val;
@@ -105,7 +107,7 @@ class _CloudFirestoreSearchState extends State<CloudFirestoreSearch> {
             backgroundColor: Colors.black54,
             title: Text(books.title,
               style: const TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold),
+                  fontSize: 18, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
             )
         ),
       ),
