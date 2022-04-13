@@ -30,11 +30,20 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text('Sign In for XBookApp'),
+        title: const Text(
+          'Sign In for XBookApp',
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
         actions: <Widget>[
           TextButton.icon(
-            icon: const Icon(Icons.person),
-            label: const Text('Register'),
+            icon: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            label: const Text(
+              'Register',
+              style: TextStyle(fontFamily: "ProductSans", color: Colors.white),
+            ),
             onPressed: () => widget.toggleView(),
           ),
         ],
@@ -48,7 +57,7 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 20.0),
               TextFormField(
                 validator: (val) => val!.isEmpty ? 'Enter an email' : null,
-                decoration: textInputDecoration.copyWith(hintText: 'email'),
+                decoration: textInputDecoration.copyWith(hintText: 'Email'),
                 onChanged: (val) {
                   setState(() => email = val);
                 },
@@ -56,7 +65,7 @@ class _SignInState extends State<SignIn> {
               const SizedBox(height: 20.0),
               TextFormField(
                 obscureText: true,
-                decoration: textInputDecoration.copyWith(hintText: 'password'),
+                decoration: textInputDecoration.copyWith(hintText: 'Password'),
                 validator: (val) =>
                     val!.length < 6 ? 'Enter a password 6+ chars long' : null,
                 onChanged: (val) {
@@ -65,9 +74,13 @@ class _SignInState extends State<SignIn> {
               ),
               const SizedBox(height: 20.0),
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo, // Background color
+                  ),
                   child: const Text(
                     'Login',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white, fontFamily: "ProductSans"),
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
@@ -89,14 +102,21 @@ class _SignInState extends State<SignIn> {
               const Text(
                 "Looking to buy books? You don't need an account",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, fontFamily: "ProductSans"),
               ),
+              const SizedBox(height: 15.0),
               ElevatedButton(
                   onPressed: () {
                     _navigateToListview_viewallbooksScreen(context);
                     // Navigate to List of Books being sold screen
                   },
-                  child: const Text('View all Books being sold'))
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.indigo, // Background color
+                  ),
+                  child: const Text(
+                    'View all Books being sold',
+                    style: TextStyle(fontFamily: "ProductSans"),
+                  ))
             ],
           ),
         ),

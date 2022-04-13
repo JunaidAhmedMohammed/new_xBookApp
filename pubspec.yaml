@@ -83,10 +83,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: BeauRivage
+    - family: ProductSans
       fonts:
-        - asset: fonts/BeauRivage-Regular.ttf
-        - asset: fonts/BeauRivage-Regular.ttf
+        - asset: fonts/Product Sans Regular.ttf
+        - asset: fonts/Product Sans Regular.ttf
           style: italic
           weight: 400
   # For details regarding fonts from package dependencies,

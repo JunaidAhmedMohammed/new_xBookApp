@@ -116,7 +116,7 @@ class _BottomPart extends StatelessWidget {
               'Buy or Sell',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontFamily: 'BeauRivage',
+                  fontFamily: 'ProductSans',
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
@@ -126,7 +126,7 @@ class _BottomPart extends StatelessWidget {
               'We believe there are never enough books',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'BeauRivage',
+                fontFamily: 'ProductSans',
                 fontSize: 25,
                 letterSpacing: 2,
                 color: Colors.black,
