@@ -15,10 +15,12 @@ class MyApp2 extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return const MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Home(),
           );
         } else {
           return const MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Authenticate(),
           );
         }

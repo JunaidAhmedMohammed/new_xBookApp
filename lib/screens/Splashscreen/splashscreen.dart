@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.indigo[500],
       body: Stack(
         children: [
           // White Container top half
@@ -83,8 +83,9 @@ class _SplashScreenState extends State<SplashScreen>
                     opacity: animatebooktext ? 1 : 0,
                     duration: const Duration(seconds: 1),
                     child: const Text(
-                      'B O O K',
-                      style: TextStyle(fontSize: 50.0, color: Colors.black),
+                      'X Books Buy & Sell',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 50.0, color: Colors.indigo, fontFamily: "ProductSans"),
                     ),
                   ),
                 ),
@@ -113,23 +114,23 @@ class _BottomPart extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
-              'Buy or Sell',
+              'Looking for Old Text Books?',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'ProductSans',
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                  color: Colors.white),
             ),
             const SizedBox(height: 30.0),
             const Text(
-              'We believe there are never enough books',
+              'Or Have old text books to sell?',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'ProductSans',
                 fontSize: 25,
                 letterSpacing: 2,
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
                 height: 1.5,
               ),
@@ -141,13 +142,13 @@ class _BottomPart extends StatelessWidget {
                 height: 85.0,
                 width: 85.0,
                 decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  border: Border.all(color: Colors.black, width: 5.0),
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white, width: 5.0),
                 ),
                 child: IconButton(
                   icon: const Icon(Icons.chevron_right),
                   iconSize: 50.0,
-                  color: Colors.black,
+                  color: Colors.white,
                   onPressed: () {
                     _navigateToAuthenticate(context);
                   },

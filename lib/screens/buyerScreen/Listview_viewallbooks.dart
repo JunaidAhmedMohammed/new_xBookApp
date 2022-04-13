@@ -19,16 +19,18 @@ class _CloudFirestoreSearchState2 extends State<CloudFirestoreSearch2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         backgroundColor: Colors.indigo[400],
+        elevation: 0.0,
         title: Card(
           child: TextField(
             // ignore: prefer_const_constructors
             decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search, color: Colors.indigo,),
                 suffixIcon: IconButton(
                   onPressed: () {
                     _navigateToGridview_allbooksScreen(context);
                   },
-                  icon: Icon(Icons.grid_view),
+                  icon: const Icon(Icons.grid_view, color: Colors.indigo,),
                 ),
                 hintText: 'Search.. '),
             onChanged: (val) {
@@ -75,8 +77,9 @@ class _CloudFirestoreSearchState2 extends State<CloudFirestoreSearch2> {
             },
             title: Text(
               books.title,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
             ),
+            subtitle: Text(books.author, style: const TextStyle(fontFamily: "ProductSans", fontSize: 17),),
           ),
           const Divider(
             thickness: 2,
