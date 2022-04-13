@@ -28,8 +28,8 @@ class Home extends StatelessWidget {
               color: Colors.white,
             ),
             label: const Text(
-              'logout',
-              style: TextStyle(color: Colors.white),
+              'Logout',
+              style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),
             ),
             onPressed: () async {
               await _auth.signOut();

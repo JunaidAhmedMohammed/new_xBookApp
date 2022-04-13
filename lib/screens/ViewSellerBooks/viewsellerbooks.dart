@@ -21,7 +21,9 @@ class _ViewSellerBooksState extends State<ViewSellerBooks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Books'),
+        backgroundColor: Colors.indigo[400],
+        elevation: 0.0,
+        title: const Text('My Books', style: TextStyle(fontFamily: "ProductSans"),),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: (title != "" && title != null || uid != "" && uid != null)
@@ -32,25 +34,27 @@ class _ViewSellerBooksState extends State<ViewSellerBooks> {
             : FirebaseFirestore.instance.collection("books").snapshots(),
         builder: (context, snapshot) {
           return (snapshot.connectionState == ConnectionState.waiting)
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : ListView.builder(
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
                     DocumentSnapshot data = snapshot.data!.docs[index];
                     return Container(
-                      padding: EdgeInsets.only(top: 16),
+                      padding: const EdgeInsets.only(top: 16),
                       child: Column(
                         children: [
                           ListTile(
                             title: Text(data['title'],
+                                // ignore: prefer_const_constructors
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
-                            subtitle: Text(data['edition'],
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                                    fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans")),
+                            subtitle: Text("Listed Price : " + data['price'].toString() + "\$",
+                                style: const TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans")),
                             isThreeLine: true,
+                            trailing: const Icon(Icons.delete_forever_outlined, color: Colors.red),
                           ),
-                          Divider(
+                          const Divider(
                             thickness: 2,
                           )
                         ],
