@@ -52,54 +52,49 @@ class Home extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 20, fontFamily: "ProductSans"),
               )),
-          Container(
-            color: Colors.indigo,
-            child: SizedBox(
-              height: 50,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 20),
-                  primary: Colors.black,
-                ),
-                onPressed: () {
-                  _navigateToSellBookScreen(context);
-                },
-                child: const Text('Add a Book to sell', style: TextStyle(color: Colors.white,fontFamily: "ProductSans"),),
+          SizedBox(
+            height: 50,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+                primary: Colors.black,
+                backgroundColor: Colors.indigo
               ),
+              onPressed: () {
+                _navigateToSellBookScreen(context);
+              },
+              child: const Text('Add a Book to sell', style: TextStyle(color: Colors.white,fontFamily: "ProductSans"),),
             ),
           ),
           const SizedBox(height: 20,),
-          Container(
-            color: Colors.indigo,
-            child: SizedBox(
-              height: 50,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 20),
-                  primary: Colors.black,
-                ),
-                onPressed: () {
-                  _navigateToViewSellerBookScreen(context);
-                },
-                child: const Text('View All the Books you are selling', style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),),
+          SizedBox(
+            height: 50,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+                backgroundColor: Colors.white
               ),
+              onPressed: () {
+                _navigateToViewSellerBookScreen(context);
+              },
+              child: const Text('Manage the Books you are selling', style: TextStyle(color: Colors.indigo, fontFamily: "ProductSans"),),
             ),
           ),
           const SizedBox(height: 20,),
-          Container(
-            color: Colors.indigo,
-            child: SizedBox(
-              height: 50,
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 20),
-                  primary: Colors.black,
-                ),
-                onPressed: () {
-                  _navigateToViewBooksForSaleScreen(context);
-                },
-                child: const Text('View All Books for Sale', style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),),
+          SizedBox(
+            height: 50,
+            child: TextButton(
+              
+              style: TextButton.styleFrom(
+                
+                textStyle: const TextStyle(fontSize: 20),
+                backgroundColor: Colors.white
+                
               ),
+              onPressed: () {
+                _navigateToViewBooksForSaleScreen(context);
+              },
+              child: const Text('View All Books for Sale', style: TextStyle(color: Colors.indigo, fontFamily: "ProductSans"),),
             ),
           )
         ],
