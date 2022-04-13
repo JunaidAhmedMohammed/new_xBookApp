@@ -84,6 +84,23 @@ class Home extends StatelessWidget {
                 child: const Text('View All the Books you are selling', style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),),
               ),
             ),
+          ),
+          const SizedBox(height: 20,),
+          Container(
+            color: Colors.indigo,
+            child: SizedBox(
+              height: 50,
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 20),
+                  primary: Colors.black,
+                ),
+                onPressed: () {
+                  _navigateToViewBooksForSaleScreen(context);
+                },
+                child: const Text('View All Books for Sale', style: TextStyle(color: Colors.white, fontFamily: "ProductSans"),),
+              ),
+            ),
           )
         ],
       ),
@@ -93,6 +110,10 @@ class Home extends StatelessWidget {
   void _navigateToSellBookScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SellBook()));
+  }
+  void _navigateToViewBooksForSaleScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const ViewSellerBooks()));
   }
 
   void _navigateToViewSellerBookScreen(context) {
