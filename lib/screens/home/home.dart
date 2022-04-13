@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:x_book_app/screens/buyerScreen/Gridview_viewallbooks.dart';
+import 'package:x_book_app/screens/buyerScreen/Listview_viewallbooks.dart';
 import 'package:x_book_app/screens/sell_book/SellBook.dart';
 import 'package:x_book_app/services/auth.dart';
 import '../ViewSellerBooks/viewsellerbooks.dart';
@@ -57,7 +59,6 @@ class Home extends StatelessWidget {
             child: TextButton(
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(fontSize: 20),
-                primary: Colors.black,
                 backgroundColor: Colors.indigo
               ),
               onPressed: () {
@@ -92,7 +93,7 @@ class Home extends StatelessWidget {
                 
               ),
               onPressed: () {
-                _navigateToViewBooksForSaleScreen(context);
+                      _navigateToListview_viewallbooksScreen(context);
               },
               child: const Text('View All Books for Sale', style: TextStyle(color: Colors.indigo, fontFamily: "ProductSans"),),
             ),
@@ -106,10 +107,10 @@ class Home extends StatelessWidget {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SellBook()));
   }
-  void _navigateToViewBooksForSaleScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const ViewSellerBooks()));
-  }
+  void _navigateToListview_viewallbooksScreen(context) {
+  Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => const CloudFirestoreSearch2()));
+}
 
   void _navigateToViewSellerBookScreen(context) {
     Navigator.of(context)
