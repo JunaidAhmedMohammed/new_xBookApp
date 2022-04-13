@@ -32,7 +32,7 @@ class _CloudFirestoreSearchState2 extends State<CloudFirestoreSearch2> {
                   },
                   icon: const Icon(Icons.grid_view, color: Colors.indigo,),
                 ),
-                hintText: 'Search.. '),
+                hintText: 'Search.. ', hintStyle: const TextStyle(fontFamily: "ProductSans")),
             onChanged: (val) {
               setState(() {
                 title = val;
