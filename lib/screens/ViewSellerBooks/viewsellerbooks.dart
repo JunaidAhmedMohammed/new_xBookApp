@@ -23,7 +23,10 @@ class _ViewSellerBooksState extends State<ViewSellerBooks> {
       appBar: AppBar(
         backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text('My Books', style: TextStyle(fontFamily: "ProductSans"),),
+        title: const Text(
+          'My Books',
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: (title != "" && title != null || uid != "" && uid != null)
@@ -47,12 +50,31 @@ class _ViewSellerBooksState extends State<ViewSellerBooks> {
                             title: Text(data['title'],
                                 // ignore: prefer_const_constructors
                                 style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans")),
-                            subtitle: Text("Listed Price : " + data['price'].toString() + "\$",
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "ProductSans")),
+                            subtitle: Text(
+                                "Listed Price : " +
+                                    data['price'].toString() +
+                                    "\$",
                                 style: const TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans")),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "ProductSans")),
                             isThreeLine: true,
-                            trailing: const Icon(Icons.delete_forever_outlined, color: Colors.red),
+                            trailing: IconButton(
+                              icon: const Icon(
+                                Icons.delete_forever_rounded,
+                                size: 30,
+                                color: Colors.red,
+                              ),
+                              onPressed: () async{
+                                await FirebaseFirestore.instance
+                                    .collection("books")
+                                    .doc(data.id)
+                                    .delete();
+                              },
+                            ),
                           ),
                           const Divider(
                             thickness: 2,
