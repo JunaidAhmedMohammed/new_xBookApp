@@ -24,49 +24,84 @@ class _BookDetailsState extends State<BookDetails> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+      body: Container(
+            padding: const EdgeInsets.only(top: 16),
+            child: Column(
+              children : [
           const SizedBox(
             height: 10,
           ),
           Text(
-            widget.books.title,
+            "Title: " + widget.books.title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                fontFamily: "ProductSans"),
+              style: const TextStyle(
+                  fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans")
           ),
+                Divider(
+                  color: Colors.indigo,
+                  height: 20,
+                  thickness: 1,
+                  indent: 10,
+                  endIndent: 10,
+                ),
           Text(
-            widget.books.author,
+            "Author: " + widget.books.author,
             textAlign: TextAlign.center,
             style: const TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 16,
-                fontFamily: "ProductSans"),
+                  fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
           ),
+                Divider(
+                  color: Colors.indigo,
+                  height: 20,
+                  thickness: 1,
+                  indent: 10,
+                  endIndent: 10,
+                ),
           Text(
-            widget.books.edition,
+            "Edition: " + widget.books.edition,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                fontWeight: FontWeight.normal,
-                fontSize: 16,
-                fontFamily: "ProductSans"),
+             style: const TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
           ),
+                Divider(
+                  color: Colors.indigo,
+                  height: 20,
+                  thickness: 1,
+                  indent: 10,
+                  endIndent: 10,
+                ),
           Text(
-            widget.books.price.toString(),
+              "Price: " + widget.books.price.toString() + "\$",
             textAlign: TextAlign.center,
             style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                fontFamily: "ProductSans"),
+            fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
           ),
+                Divider(
+                  color: Colors.indigo,
+                  height: 20,
+                  thickness: 1,
+                  indent: 10,
+                  endIndent: 10,
+                ),
+          Text(
+            "Contact: " + widget.books.contact,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+            fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
+          ),
+                Divider(
+                  color: Colors.indigo,
+                  height: 20,
+                  thickness: 1,
+                  indent: 10,
+                  endIndent: 10,
+                ),
           const SizedBox(
             height: 15,
           ),
         ],
       ),
+    ),
     );
   }
 }
