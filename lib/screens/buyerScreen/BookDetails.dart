@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../models/BookModel.dart';
 
 class BookDetails extends StatefulWidget {
@@ -17,9 +16,12 @@ class _BookDetailsState extends State<BookDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         backgroundColor: Colors.indigo[400],
+        backgroundColor: Colors.indigo[400],
         elevation: 0.0,
-        title: const Text("Book Details", style: TextStyle(fontFamily: "ProductSans"),),
+        title: const Text(
+          "Book Details",
+          style: TextStyle(fontFamily: "ProductSans"),
+        ),
         centerTitle: true,
       ),
       body: Column(
@@ -31,17 +33,34 @@ class _BookDetailsState extends State<BookDetails> {
           Text(
             widget.books.title,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, fontFamily: "ProductSans"),
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontFamily: "ProductSans"),
           ),
           Text(
             widget.books.author,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, fontFamily: "ProductSans"),
+            style: const TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 16,
+                fontFamily: "ProductSans"),
           ),
           Text(
             widget.books.edition,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, fontFamily: "ProductSans"),
+            style: const TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 16,
+                fontFamily: "ProductSans"),
+          ),
+          Text(
+            widget.books.price.toString(),
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontFamily: "ProductSans"),
           ),
           const SizedBox(
             height: 15,

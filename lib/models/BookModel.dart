@@ -7,11 +7,13 @@ class Books {
   String author;
 
   String edition;
+  double price;
 
-  Books(this.title, this.author, this.edition);
+  Books(this.title, this.author, this.edition, this.price);
 
   Books.fromSnapshot(DocumentSnapshot snapshot)
       : title = snapshot['title'],
         author = snapshot['author'],
-        edition = snapshot['edition'];
+        edition = snapshot['edition'],
+        price = snapshot['price'];
 }

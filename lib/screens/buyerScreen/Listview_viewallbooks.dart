@@ -19,20 +19,27 @@ class _CloudFirestoreSearchState2 extends State<CloudFirestoreSearch2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         backgroundColor: Colors.indigo[400],
+        backgroundColor: Colors.indigo[400],
         elevation: 0.0,
         title: Card(
           child: TextField(
             // ignore: prefer_const_constructors
             decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search, color: Colors.indigo,),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  color: Colors.indigo,
+                ),
                 suffixIcon: IconButton(
                   onPressed: () {
                     _navigateToGridview_allbooksScreen(context);
                   },
-                  icon: const Icon(Icons.grid_view, color: Colors.indigo,),
+                  icon: const Icon(
+                    Icons.grid_view,
+                    color: Colors.indigo,
+                  ),
                 ),
-                hintText: 'Search.. ', hintStyle: const TextStyle(fontFamily: "ProductSans")),
+                hintText: 'Search.. ',
+                hintStyle: const TextStyle(fontFamily: "ProductSans")),
             onChanged: (val) {
               setState(() {
                 title = val;
@@ -77,9 +84,17 @@ class _CloudFirestoreSearchState2 extends State<CloudFirestoreSearch2> {
             },
             title: Text(
               books.title,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "ProductSans"),
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "ProductSans"),
             ),
-            subtitle: Text(books.author, style: const TextStyle(fontFamily: "ProductSans", fontSize: 17),),
+            subtitle: Text(
+              books.author,
+              style: const TextStyle(fontFamily: "ProductSans", fontSize: 17),
+            ),
+            trailing: Image.network(
+                'https://www.iconsdb.com/icons/preview/navy-blue/book-xxl.png'),
           ),
           const Divider(
             thickness: 2,
